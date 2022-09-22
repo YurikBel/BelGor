@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Лабораторные {% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/labs.css' %}">{% endblock %}
+{% block content %}
+<div class="labs">
+    <div class="curs curs3">
+        <h3>3 Курс </h3>
+        <div class="curs tk">
+            <h4> <span class="skob">[</span> Кафедра теории колебаний <span class="skob">]</span></h4>
+            <ul>
+                <li><a class="elem" href="{% static 'laboratories/lc_filters4.pdf' %}" download="newfilename">LC фильтры</a></li>
+                <li><a class="elem" href="{% static 'laboratories/lc_filters4.pdf' %}" download="newfilename">Фазовая плоскость лампового генератора</a></li>
+            </ul>
+        </div>
+        <div class="curs rt">
+            <h4>Кафедра Радиотехники</h4>
+            <ul>
+                <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+                <li><a class="elem" href="{% static 'laboratories/lc_filters4.pdf' %}" download="newfilename">Фазовая плоскость лампового генератора</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="curs curs2">
+        <h3>2 Курс </h3>
+        <ul>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+        </ul>
+    </div>
+    <div class="curs curs1">
+        <h3>1 Курс </h3>
+        <ul>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

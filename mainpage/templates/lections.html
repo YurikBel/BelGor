@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Лекции {% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/lections.css' %}">{% endblock %}
+{% block content %}
+<div>
+    <div class="semestr5">
+        <h3> 5 Семестр </h3>
+        <ul>
+            <li>Атомная и ядерная физика</li>
+            <li>Радиоэлектроника</li>
+            <li>Электродинамика</li>
+            <li>Квантовая физика</li>
+            <li>Численные методы</li>
+        </ul>
+    </div>
+    <div class="semestr4">
+        4 семестр
+    </div>
+    <div class="semestr3">
+        3 семестр
+    </div>
+    <div class="semestr2">
+        2 семестр
+    </div>
+    <div class="semestr1">
+        1 семестр
+    </div>
+</div>
+{% endblock %}
+

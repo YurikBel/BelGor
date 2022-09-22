@@ -1,0 +1,4 @@
+/snshop/settings.py
+/blog/__pycache__/*.pyc
+/mainpage/__pycache__/*.pyc
+/mainpage/migrations/__pycache__/*.pyc
