@@ -3,7 +3,9 @@
     justify-content: space-evenly;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-style: solid;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #ff4545;
     margin-bottom: 50px;
     margin-top: 25px;
 }
