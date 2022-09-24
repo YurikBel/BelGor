@@ -5,14 +5,14 @@
     padding-bottom: 15px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: #ff4545;
+    border-bottom-color: #3fc7fc;
     margin-bottom: 50px;
     margin-top: 25px;
 }
 
 
 .carousel {
-    width: 500px;
+    width: 700px;
 }
 
 .we {
@@ -34,7 +34,7 @@ svg {
 }
 
 img {
-     border-radius: 3px;
+    border-radius: 3px;
 }
 
 .letter {
