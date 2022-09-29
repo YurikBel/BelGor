@@ -1,23 +1,23 @@
 .container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: #3fc7fc;
+    border-bottom-color: var(--color);
     margin-bottom: 50px;
     margin-top: 25px;
 }
 
 
 .carousel {
-    width: 700px;
+    width: 350px;
+    height: 620px;
 }
 
 .we {
-    width: 200px;
-    height: 300px;
+    width: 300px;
 }
 
 #Icons {
@@ -34,13 +34,20 @@ svg {
 }
 
 img {
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .letter {
-    font-family: "Helvetica";
-    letter-spacing: 0.02em;
     font-size: 110%;
-    text-indent: 20px;
+    letter-spacing: 0.02em;
+    padding-top: 10px;
+}
 
+.contact{
+    font-size: 150%;
+}
+
+.vk {
+    text-decoration: none;
+    color: black;
 }

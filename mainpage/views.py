@@ -11,3 +11,6 @@ def lections(request):
 
 def labs(request):
     return render(request, 'labs.html')
+
+def converter(request):
+    return render(request, 'converter.html')

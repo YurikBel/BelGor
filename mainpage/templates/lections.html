@@ -1,9 +1,9 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block title %} Лекции {% endblock %}
-{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/lections.css' %}">{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/labs.css' %}">{% endblock %}
 {% block content %}
-<div>
+<div class="labs">
     <div class="semestr5">
         <h3> 5 Семестр </h3>
         <ul>
@@ -11,20 +11,22 @@
             <li>Радиоэлектроника</li>
             <li>Электродинамика</li>
             <li>Квантовая физика</li>
-            <li>Численные методы</li>
         </ul>
     </div>
     <div class="semestr4">
         <h3> 4 семестр </h3>
     </div>
     <div class="semestr3">
-        3 семестр
+        <h3> 3 семестр </h3>
     </div>
     <div class="semestr2">
-        2 семестр
+        <h3> 2 семестр </h3>
     </div>
     <div class="semestr1">
-        1 семестр
+        <h3> 1 семестр </h3>
+    </div>
+    <div class="preview">
+        <embed id="preview" src="{% static 'laboratories/lc_filters4.pdf' %}" width="500px" height="650px"/>
     </div>
 </div>
 {% endblock %}

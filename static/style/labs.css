@@ -4,7 +4,7 @@ a {
 
 
 .skob {
-    color: #3fc7fc;
+    color: var(--color);
     font-size: 120%;
 }
 
@@ -15,7 +15,7 @@ a {
 
 .labs {
     width: 50%;
-    background-color: #e3dcdc;
+    background-color: #c9c9c9;
 }
 
 .elem:after {
@@ -23,7 +23,7 @@ a {
     content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
     height: 1px; /*задаём высоту линии*/
     width: 0%; /*задаём начальную ширину элемента (линии)*/
-    background-color: #3fc7fc; /*цвет фона элемента*/
+    background-color: var(--color); /*цвет фона элемента*/
     transition: width 0.2s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
 }
 .elem:hover:after,
@@ -31,7 +31,7 @@ a {
 width: 100%;
 }
 .elem:hover{
-color:#3fc7fc;
+color:var(--color);
 }
 
 .preview {

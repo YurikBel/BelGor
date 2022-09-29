@@ -1,9 +1,14 @@
+:root {
+  --color: red;
+}
+
+
+
 .content{
     position: relative;
     left: 15%;
     width: 70%;
     height: 1000px;
-    font-family: "Arial";
     letter-spacing: 0.02em;
 }
 
@@ -13,17 +18,17 @@
     color: black;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: #3fc7fc;
+    border-bottom-color: var(--color);
     margin: 5px;
     text-transform: uppercase;
     font-size: 90%;
     letter-spacing: 0.05em;
 }
 
-.nav-link:hover {
-    background-color: #3fc7fc;
+/*.nav-link:hover {
+    background-color: var(--color);
     color: white;
-}
+}*/
 
 .navbar-brand {
     text-transform: uppercase;
@@ -32,18 +37,74 @@
 }
 
 
-.dropdown-menu {
-    border-radius: 0px;
-    border-color: #3fc7fc;
-}
-
-.dropdown-item:hover {
-    background-color: #3fc7fc;
-    color: white;
-}
 
 .stc {
     position: sticky;
     z-index: 2;
     top: 0%;
+}
+
+nav {
+  background: #fff;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li.nav-item {
+  display: inline-block;
+}
+nav ul li a.nav-link {
+  display: block;
+  margin: 0 10px;
+}
+nav ul li a.nav-link,
+nav ul li a.nav-link:after,
+nav ul li a.nav-link:before {
+  transition: all .2s;
+}
+nav ul li a.nav-link:hover {
+  color: black;
+}
+
+/* SHIFT */
+nav.shift ul li a.nav-link {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a.nav-link:hover {
+  color: white;
+}
+nav.shift ul li a.nav-link:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: var(--color);
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav.shift ul li a.nav-link:hover:after {
+  opacity: 0.6;
+  visibility: visible;
+  height: 100%;
+}
+
+
+.dropdown-menu {
+    border-radius: 5px !important;
+    border-color: var(--color) !important;
+}
+
+.dropdown-item:hover {
+    background-color: var(--color) !important;
+    color: white !important;
 }
