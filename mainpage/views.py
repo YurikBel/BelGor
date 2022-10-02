@@ -14,3 +14,7 @@ def labs(request):
 
 def converter(request):
     return render(request, 'converter.html')
+
+
+def cpp(request):
+    return render(request, 'cpp.html')
