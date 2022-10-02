@@ -18,3 +18,6 @@ def converter(request):
 
 def python(request):
     return render(request, 'python.html')
+
+def cpp(request):
+    return render(request, 'cpp.html')
