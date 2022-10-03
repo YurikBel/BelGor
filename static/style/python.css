@@ -1,0 +1,23 @@
+.article {
+    padding: 10px;
+    margin: 10px 0px;
+    background-color: #fff7ff;
+    border-radius: 3px;
+}
+
+
+.list{
+    width: 75%;
+    position: relative;
+}
+
+.map{
+    position: fixed;
+    right: 5%;
+    top: 10%;
+    width: 25%;
+}
+
+a{
+    text-decoration: none;
+}

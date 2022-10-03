@@ -20,5 +20,6 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mainpage/', include('mainpage.urls')),
+    path('notes/', include('notes.urls')),
     path('', RedirectView.as_view(url='/mainpage/', permanent=True)),
 ]

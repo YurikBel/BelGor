@@ -108,3 +108,43 @@ nav.shift ul li a.nav-link:hover:after {
     background-color: var(--color) !important;
     color: white !important;
 }
+
+.elem {
+    color: black;
+    display: inline-block
+}
+
+.elem:after {
+    display: block; /*превращаем его в блочный элемент*/
+    content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+    height: 1px; /*задаём высоту линии*/
+    width: 0%; /*задаём начальную ширину элемента (линии)*/
+    background-color: var(--color); /*цвет фона элемента*/
+    transition: width 0.2s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+}
+.elem:hover:after,
+.elem:focus:after {
+width: 100%;
+}
+.elem:hover{
+color:var(--color);
+}
+
+@media (min-width:700px){
+    .carousel{
+        display: block;
+    }
+}
+
+@media (max-width:700px){
+    .carousel{
+        display: none;
+    }
+    .content {
+        width: 100%;
+        left: 0px;
+    }
+    .we{
+        width: 100%;
+    }
+}

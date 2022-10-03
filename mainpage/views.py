@@ -16,8 +16,4 @@ def converter(request):
     return render(request, 'converter.html')
 
 
-def python(request):
-    return render(request, 'python.html')
 
-def cpp(request):
-    return render(request, 'cpp.html')

@@ -6,7 +6,4 @@ urlpatterns = [
     path('lections', views.lections, name='mainpage.lections'),
     path('labs', views.labs, name='mainpage.labs'),
     path('converter', views.converter, name='mainpage.converter'),
-    path('python', views.python, name='mainpage.python'),
-    path('cpp', views.cpp, name='mainpage.cpp'),
-
 ]
