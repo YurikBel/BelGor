@@ -5,45 +5,132 @@
 {% block content %}
 <div>
     <div>
-       <h5>Конвертер imgToPDF Python</h5>
-        <p>
-            Данный скрипт считывает все файлы из заданной папки, обрабатывает изображения (меняет яркость и контрастность),
-            затем сохранят все обработанные изображения в другую папку. Далле он все конвертирует в PDF и склеивает.
-            На выходе получается PDF файл из улучшенных изображений.
-        </p>
+       <h4>Конвертер jpg в pdf с Python</h4>
+        <h5>
+            Преобработка изображений
+        </h5>
+            <p>
+                Рассмотрим как с помощью python и нескольких строчек кода легко обработать фотографии и получить объединённый pdf файл. Это легко реализуется
+                с помощью библиотеки <b>PIL/Pillow</b>, которая обычно автоматически ставится с питоном. Если по какой-то причине модуль отсутствует, загружаем
+                его через терминал:
+            </p>
+        <div>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">pip install Pillow</pre>
+        </div>
+            <p>
+                В наших целях мы использовали данную библиотеку для преобработки яркости и контрастности фотографий, чтобы на выходе был хорошо читаемый файл. Для начала
+                необходимо создать папку, в которой будут храниться наши фотографии (желательно в папке с проектом). В нашем случае это .../temp_photos/. Для обработки всех
+                фотографий с папки создадим массив, который заполним с помощью метода os.listdir():
+            </p>
+        <div>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-keyword" style="color: rgb(123, 89, 192);">from</span> PIL <span class="hljs-keyword" style="color: rgb(123, 89, 192);">import</span> Image, ImageEnhance
+<span class="hljs-keyword" style="color: rgb(123, 89, 192);">import</span> os
+<span class="hljs-keyword" style="color: rgb(123, 89, 192);">import</span> img2pdf
+
+photos2 = []
+photos = os.listdir(<span class="hljs-string" style="color: rgb(145, 139, 59);">"temp_photos"</span>)</pre>
+        </div>
+            <p>
+                Здесь пустой массив <b>photos2</b> создаётся для последующего заполнения его уже обработанными фотографиями. Из модуля PIL нам понадобиться два класса: Image и ImageEnhance.
+                Если кратко, то с помощью <b>Image</b> мы создаём объект, который можно поворачивать, обрезать и тому подобные простые операции. <b>ImageEnhance</b> содержит основные 4 операции,
+                которые работают с резкостью, цветовой гаммой, яркостью и контрастностью изображения.
+            </p>
+        <div>
+           <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-keyword" style="color: rgb(123, 89, 192);">for</span> i <span class="hljs-keyword" style="color: rgb(123, 89, 192);">in</span> range(len(photos)):
+    im = Image.open(f<span class="hljs-string" style="color: rgb(145, 139, 59);">"temp_photos/{photos[i]}"</span>)
+
+    enhancer = ImageEnhance.Contrast(im)
+    factor_contrast = <span class="hljs-number" style="color: rgb(166, 89, 38);">1.75</span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);"># Коэффициент контрастности</span>
+    im_output = enhancer.enhance(factor_contrast)
+
+    enhancer = ImageEnhance.Brightness(im)
+    factor_brightness = <span class="hljs-number" style="color: rgb(166, 89, 38);">1.25</span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);"># Коэффициент яркости</span>
+    im_output = enhancer.enhance(factor_brightness)
+
+    im_output.save(f<span class="hljs-string" style="color: rgb(145, 139, 59);">"result_photos/image_new{i}.jpg"</span>)
+
+    photos2.append(f<span class="hljs-string" style="color: rgb(145, 139, 59);">"result_photos/image_new{i}.jpg"</span>)</pre>
+        </div>
+            <p>
+                В цикле мы перебираем все фотографии из папки temp_photos, затем создаём объект <b>im</b> класса <b>Image</b> и используя метод <b>.open()</b> записываем в него нашу фотографию.
+                После создаём объект класса <b>enchancer</b>, который будет отвечать сначала за контрастность изображения, затем за яркость. В качестве аргументов при создании объекта передаётся
+                само изображение класса Image. С помощью метода <b>.enchance()</b> мы меняем степень эффекта. В нашем случае за них отвечают параметры factor_contrast и factor_brightness.
+                Затем с помощью метода <b>.save()</b> сохраняем итоговое изображение в новую папку (в нашем случае это result_photos). Для дальнейшей компиляции в pdf также добавим этот файл
+                в массив photos2.
+            </p>
+        <h5>
+            Запись в pdf
+        </h5>
+        <div>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">a4_page_size = [img2pdf.in_to_pt(<span class="hljs-number" style="color: rgb(166, 89, 38);">8.3</span>), img2pdf.in_to_pt(<span class="hljs-number" style="color: rgb(166, 89, 38);">11.0</span>)]
+layout_function = img2pdf.get_layout_fun(a4_page_size)
+
+pdf = img2pdf.convert(*photos2, layout_fun=layout_function)
+<span class="hljs-keyword" style="color: rgb(123, 89, 192);">with</span> open(<span class="hljs-string" style="color: rgb(145, 139, 59);">'A4_doc.pdf'</span>, <span class="hljs-string" style="color: rgb(145, 139, 59);">'wb'</span>) <span class="hljs-keyword" style="color: rgb(123, 89, 192);">as</span> f:
+     f.write(pdf)</pre>
+        </div>
+            <a>
+                Далее мы используем модуль <b>img2pdf</b>. Он не входит по стандарту в python, поэтому его заранее надо установить через <i>pip install img2pdf</i>. В переменной
+                <b>a4_page_size</b> задаём размер одного листа pdf. А через <i>layout_function = img2pdf.get_layout_fun(a4_page_size)</i> создаём сам лист. И следующие две строчки создают
+                pdf файл в папке.
+            </a>
+        <div>
+            <br>
+        </div>
+        <h5>
+            Полный листинг кода:
+        </h5>
+        <div>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-keyword" style="color: rgb(123, 89, 192);">from</span> PIL <span class="hljs-keyword" style="color: rgb(123, 89, 192);">import</span> Image, ImageEnhance
+<span class="hljs-keyword" style="color: rgb(123, 89, 192);">import</span> os
+<span class="hljs-keyword" style="color: rgb(123, 89, 192);">import</span> img2pdf
+
+photos2 = []
+photos = os.listdir(<span class="hljs-string" style="color: rgb(145, 139, 59);">"temp_photos"</span>)
+
+<span class="hljs-keyword" style="color: rgb(123, 89, 192);">for</span> i <span class="hljs-keyword" style="color: rgb(123, 89, 192);">in</span> range(len(photos)):
+    im = Image.open(f<span class="hljs-string" style="color: rgb(145, 139, 59);">"temp_photos/{photos[i]}"</span>)
+
+    enhancer = ImageEnhance.Contrast(im)
+    factor_contrast = <span class="hljs-number" style="color: rgb(166, 89, 38);">1.75</span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);"># Коэффициент контрастности</span>
+    im_output = enhancer.enhance(factor_contrast)
+
+    enhancer = ImageEnhance.Brightness(im)
+    factor_brightness = <span class="hljs-number" style="color: rgb(166, 89, 38);">1.25</span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);"># Коэффициент яркости</span>
+    im_output = enhancer.enhance(factor_brightness)
+
+    im_output.save(f<span class="hljs-string" style="color: rgb(145, 139, 59);">"result_photos/image_new{i}.jpg"</span>)
+
+    photos2.append(f<span class="hljs-string" style="color: rgb(145, 139, 59);">"result_photos/image_new{i}.jpg"</span>)
+
+
+a4_page_size = [img2pdf.in_to_pt(<span class="hljs-number" style="color: rgb(166, 89, 38);">8.3</span>), img2pdf.in_to_pt(<span class="hljs-number" style="color: rgb(166, 89, 38);">11.0</span>)]
+layout_function = img2pdf.get_layout_fun(a4_page_size)
+
+pdf = img2pdf.convert(*photos2, layout_fun=layout_function)
+<span class="hljs-keyword" style="color: rgb(123, 89, 192);">with</span> open(<span class="hljs-string" style="color: rgb(145, 139, 59);">'A4_doc.pdf'</span>, <span class="hljs-string" style="color: rgb(145, 139, 59);">'wb'</span>) <span class="hljs-keyword" style="color: rgb(123, 89, 192);">as</span> f:
+     f.write(pdf)</pre>
+        </div>
+        <div>
+            <br>
+        </div>
+        <div>
+            <h5>Другие методы PIL/Pillow</h5>
+        </div>
+            <table>
+                <tr>
+                    <td><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">ImageEnhance.Color(image)  ||  Цветовой баланс изображения (0.0 - ч/б; 1.0 - цветной)</pre></td>
+                </tr>
+                <tr>
+                    <td><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">ImageEnhance.Contrast(image)  ||  Контрастность изображения</pre></td>
+                </tr>
+
+            </table>
+        <div>
+            <p><span style="color:#95a5a6"><span style="font-size:12px"><span style="font-family:Courier New,Courier,monospace"><em>#Дата редактирования 03/10/2022</em></span></span></span></p>
+        </div>
     </div>
-    <div>
-        <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(239, 236, 244); color: rgb(88, 82, 96); padding: 0.5em;"><span class="hljs-keyword" style="color: rgb(149, 90, 231);">from</span> PIL <span class="hljs-keyword" style="color: rgb(149, 90, 231);">import</span> Image, ImageEnhance
-        <span class="hljs-keyword" style="color: rgb(149, 90, 231);">import</span> os
-        <span class="hljs-keyword" style="color: rgb(149, 90, 231);">import</span> img2pdf
 
-        photos2 = []
-        photos = os.listdir(<span class="hljs-string" style="color: rgb(42, 146, 146);">"temp_photos"</span>)
-
-        <span class="hljs-keyword" style="color: rgb(149, 90, 231);">for</span> i <span class="hljs-keyword" style="color: rgb(149, 90, 231);">in</span> range(len(photos)):
-            im = Image.open(f<span class="hljs-string" style="color: rgb(42, 146, 146);">"temp_photos/{photos[i]}"</span>)
-            enhancer = ImageEnhance.Contrast(im)
-            factor_contrast = <span class="hljs-number" style="color: rgb(170, 87, 60);">1.75</span>   <span class="hljs-comment" style="color: rgb(101, 95, 109);"># Коэффициент контрастности</span>
-            im_output = enhancer.enhance(factor_contrast)
-            im_output.save(f<span class="hljs-string" style="color: rgb(42, 146, 146);">"temp_photos2/image_new{i}.jpg"</span>)
-
-        photos = os.listdir(<span class="hljs-string" style="color: rgb(42, 146, 146);">"temp_photos2"</span>)
-
-        <span class="hljs-keyword" style="color: rgb(149, 90, 231);">for</span> i <span class="hljs-keyword" style="color: rgb(149, 90, 231);">in</span> range(len(photos)):
-            im = Image.open(f<span class="hljs-string" style="color: rgb(42, 146, 146);">"temp_photos2/{photos[i]}"</span>)
-            enhancer = ImageEnhance.Brightness(im)
-            factor_brightness = <span class="hljs-number" style="color: rgb(170, 87, 60);">1.25</span>   <span class="hljs-comment" style="color: rgb(101, 95, 109);"># Коэффициент контрастности</span>
-            im_output = enhancer.enhance(factor_brightness)
-            im_output.save(f<span class="hljs-string" style="color: rgb(42, 146, 146);">"result_photos/image_new{i}.jpg"</span>)
-            photos2.append(f<span class="hljs-string" style="color: rgb(42, 146, 146);">"result_photos/image_new{i}.jpg"</span>)
-
-        a4_page_size = [img2pdf.in_to_pt(<span class="hljs-number" style="color: rgb(170, 87, 60);">8.3</span>), img2pdf.in_to_pt(<span class="hljs-number" style="color: rgb(170, 87, 60);">11.0</span>)]
-        layout_function = img2pdf.get_layout_fun(a4_page_size)
-
-        pdf = img2pdf.convert(*photos2, layout_fun=layout_function)
-        <span class="hljs-keyword" style="color: rgb(149, 90, 231);">with</span> open(<span class="hljs-string" style="color: rgb(42, 146, 146);">'A4_doc.pdf'</span>, <span class="hljs-string" style="color: rgb(42, 146, 146);">'wb'</span>) <span class="hljs-keyword" style="color: rgb(149, 90, 231);">as</span> f:
-             f.write(pdf)</pre>
-    </div>
 
 </div>
 
