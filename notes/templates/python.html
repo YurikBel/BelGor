@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Python {% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/python.css' %}">{% endblock %}
+{% block content %}
+<div>
+    <h3>Python</h3>
+    <p>В этом отделе опубликованы заметки, статьи и небольшие лайфхаки по математике на Python</p>
+    <div class="article">
+       <h5>Построение гафиков (база)</h5>
+        <p>
+            В этой статье показаны основные принципы и методы построения графиков на Python, используя библиотеки matplotlib
+            и numpay. Если вы ни разу не строили графики, используя эти библиотеки, советуем ознакомиться с данным материалом,
+            прежде чем приступать к прочетнию других статей.
+        </p>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
