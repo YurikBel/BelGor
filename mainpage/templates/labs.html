@@ -7,42 +7,43 @@
     <div class="curs curs3">
         <h3>3 Курс </h3>
         <div class="curs tk">
-            <h4> <span class="skob">[</span> Кафедра теории колебаний <span class="skob">]</span></h4>
-            <ul>
-                <li><a class="elem" data-href-file="/static/laboratories/lc_filters4.pdf" href="#">LC фильтры</a></li>
-                <li><a class="elem" data-href-file="/static/laboratories/Elektr_i_magnet.pdf" href="#" >Фазовая плоскость лампового генератора</a></li>
+            <h4>Кафедра теории колебаний</h4>
+            <ul class="rounded-list">
+                <li><a class="link" data-href-file="/static/laboratories/lc_filters4.pdf" href="#">LC фильтры</a></li>
+                <li><a class="link" data-href-file="/static/laboratories/Elektr_i_magnet.pdf" href="#" >Фазовая плоскость лампового генератора</a></li>
             </ul>
         </div>
         <div class="curs rt">
             <h4>Кафедра Радиотехники</h4>
-            <ul>
-                <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
-                <li><a class="elem" href="{% static 'laboratories/lc_filters4.pdf' %}" download="newfilename">Фазовая плоскость лампового генератора</a></li>
+            <ul class="rounded-list">
+                <li><a class="link" href="#" download="newfilename">Лаба</a></li>
+                <li><a class="link" href="/static/laboratories/lc_filters4.pdf" download="newfilename">Фазовая плоскость лампового генератора</a></li>
             </ul>
         </div>
     </div>
     <div class="curs curs2">
         <h3>2 Курс </h3>
-        <ul>
-            <li><a class="elem" data-href-file="/static/laboratories/fraungofers_difraction.pdf" href="#">Дифракция Фраунгофера</a></li>
-            <li><a class="elem" data-href-file="/static/laboratories/frenel.pdf" href="#">Бипризма Френеля</a></li>
-            <li><a class="elem" data-href-file="/static/laboratories/longitudinal_waves.pdf" href="#" >Продольные волны</a></li>
-            <li><a class="elem" data-href-file="/static/laboratories/norenberg312.pdf" href="#" >Прибор Норренберга</a></li>
+        <h4> Второй семестр</h4>
+        <ul class="rounded-list">
+            <li><a class="link" data-href-file="/static/laboratories/fraungofers_difraction.pdf" href="#">Дифракция Фраунгофера</a></li>
+            <li><a class="link" data-href-file="/static/laboratories/frenel.pdf" href="#">Бипризма Френеля</a></li>
+            <li><a class="link" data-href-file="/static/laboratories/longitudinal_waves.pdf" href="#" >Продольные волны</a></li>
+            <li><a class="link" data-href-file="/static/laboratories/norenberg312.pdf" href="#" >Прибор Норренберга</a></li>
         </ul>
     </div>
     <div class="curs curs1">
         <h3>1 Курс </h3>
-        <ul>
-            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
-            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
-            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
-            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
-            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
-            <li><a class="elem" href="#" download="newfilename">Лаба</a></li>
+        <ul class="rounded-list">
+            <li><a class="link" href="#" >Лаба</a></li>
+            <li><a class="link" href="#" >Лаба</a></li>
+            <li><a class="link" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="link" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="link" href="#" download="newfilename">Лаба</a></li>
+            <li><a class="link" href="#" download="newfilename">Лаба</a></li>
         </ul>
     </div>
     <div class="preview">
-        <embed id="preview" src="{% static 'laboratories/lc_filters4.pdf' %}" width="500px" height="650px"/>
+        <embed id="preview" src="{% static 'laboratories/lc_filters4.pdf' %}" width="700px" height="700px"/>
     </div>
 </div>
 {% endblock %}
@@ -51,3 +52,6 @@
 <script src="/static/javaScript/labs.js">
 </script>
 {% endblock %}
+
+
+

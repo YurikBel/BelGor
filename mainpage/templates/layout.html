@@ -65,11 +65,13 @@
     <script class="js">
 
         function forcedOriginalScale( containerId ) {
+            if( window.innerWidth >= 700 ){
 
-        var App = document.getElementById( containerId ); //получаем div по его id
-        App.style.zoom = 1.15 / devicePixelRatio; //устанавливаем масштаб в зависимости от pixel-ratio
+            var App = document.getElementById( containerId ); //получаем div по его id
+            App.style.zoom = 1.15 / devicePixelRatio; //устанавливаем масштаб в зависимости от pixel-ratio
 
-      }
+           }
+       }
 
         document.addEventListener( //когда DOM загрузился
 

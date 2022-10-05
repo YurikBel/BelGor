@@ -143,6 +143,7 @@ color:var(--color);
     .content {
         width: 100%;
         left: 0px;
+        padding: 10px;
     }
     .we{
         width: 100%;
