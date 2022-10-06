@@ -15,6 +15,14 @@
     </div>
     <div class="semestr4">
         <h3> 4 семестр </h3>
+            <h5>Теория вероятностей</h5>
+                <ul class="rounded-list">
+                        <li><a class="link" data-href-file="/static/lections/terver_lections.pdf" href="#">Лекции (рукописные 2022 г.) - Дубков А.А.</a></li>
+                        <li><a class="link" data-href-file="/static/lections/terver_practice.pdf" href="#">Практика + Решение некоторых задач - (рукописные 2022 г.) - Дубков А.А.</a></li>
+                        <li><a class="link" data-href-file="/static/lections/terver_gavrilin.pdf" href="#">Задачник - Гаврилин А.Т. / Дубков А.А.</a></li>
+                        <li><a class="link" data-href-file="/static/lections/terver_questions.doc" href="#">Вопросы к экзамену (2022 г.)</a></li>
+                        <li><a class="link" data-href-file="/static/lections/terver_basic_formulas.pdf" href="#">Основные формулы для экзамена</a></li>
+                </ul>
     </div>
     <div class="semestr3">
         <h3> 3 семестр </h3>
@@ -26,8 +34,13 @@
         <h3> 1 семестр </h3>
     </div>
     <div class="preview">
-        <embed id="preview" src="{% static 'laboratories/lc_filters4.pdf' %}" width="500px" height="650px"/>
+        <embed id="preview" src="{% static 'laboratories/lc_filters4.pdf' %}" width="700px" height="700px"/>
     </div>
 </div>
+{% endblock %}
+
+{% block js %}
+<script src="/static/javaScript/labs.js">
+</script>
 {% endblock %}
 
