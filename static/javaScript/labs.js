@@ -10,6 +10,9 @@ function changer(){
     let list = document.getElementsByClassName('link');
     if( window.innerWidth >= 700 ){
         for (let b of list){
+            b.addEventListener('click', function (e) {
+            e.preventDefault();
+            })
             b.onclick = function(){
                 const href = this.getAttribute('data-href-file')
                 const preview = document.getElementById('preview')
