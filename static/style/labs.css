@@ -1,5 +1,6 @@
 a {
     text-decoration: none;
+    color: black;
 }
 
 
@@ -62,3 +63,19 @@ h4 {
     }
 }
 
+.drop{
+    display: none;
+}
+
+.bi-arrow-bar-up{
+    display: none;
+}
+
+
+.bi-caret-up{
+    display:none;
+}
+
+.drop-h{
+    font-size: 120%;
+}

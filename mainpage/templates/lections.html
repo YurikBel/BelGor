@@ -4,43 +4,52 @@
 {% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/labs.css' %}">{% endblock %}
 {% block content %}
 <div class="labs">
-    <div class="semestr5">
-        <h3> 3 Курс </h3>
-        <h4> Четвертый семестр</h4>
-        <ul class="rounded-list">
-            <li><a>Атомная и ядерная физика</a></li>
-            <li><a>Радиоэлектроника</a></li>
-            <li><a>Электродинамика</a></li>
-            <li><a>Квантовая физика</a></li>
+    <div>
+        <h3> 4 Семестр</h3>
+        <ul>
+            <li>
+                <a href="#" class="drop-locator">
+                    <i class="bi bi-caret-down"></i>
+                    <i class="bi bi-caret-up"></i>
+                    <span class="drop-h">Теория вероятностей</span>
+                </a>
+                <ul class="drop rounded-list">
+                    <li><a class="link" data-href-file="/static/lections/terver_lections.pdf" href="#">Лекции (рукописные 2022 г.) - Дубков А.А.</a></li>
+                    <li><a class="link" data-href-file="/static/lections/terver_practice.pdf" href="#">Практика + Решение некоторых задач - (рукописные 2022 г.) - Дубков А.А.</a></li>
+                    <li><a class="link" data-href-file="/static/lections/terver_gavrilin.pdf" href="#">Задачник - Гаврилин А.Т. / Дубков А.А.</a></li>
+                    <li><a class="link" data-href-file="/static/lections/terver_questions.doc" href="#">Вопросы к экзамену (2022 г.)</a></li>
+                    <li><a class="link" data-href-file="/static/lections/terver_basic_formulas.pdf" href="#">Основные формулы для экзамена</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="drop-locator">
+                    <i class="bi bi-caret-down"></i>
+                    <i class="bi bi-caret-up"></i>
+                    <span class="drop-h">Методы математической физики</span></a>
+                <ul class="drop rounded-list">
+                    <li><a class="link" data-href-file="/static/lections/mmf_lections_smirnov.pdf" href="#">Лекции для РФ - Смирнов И.П.</a></li>
+                    <li><a class="link" data-href-file="/static/lections/mmf_program_lections.pdf" href="#">Программа лекций - Солдатов И.Н.</a></li>
+                    <li><a class="link" data-href-file="/static/lections/mmf_uchebnik_vladimirov.pdf" href="#">Учебник по ММФ - Владимиров В.С.</a></li>
+                    <li><a class="link" data-href-file="/static/lections/mmf_zadachnik_vladimirov.pdf" href="#">Задачник - Владимиров В.С.</a></li>
+                    <li><a class="link" data-href-file="/static/lections/mmf_questions.pdf" href="#">Вопросы к экзамену (2022 г.) - Солдатов И.Н.</a></li>
+                    <li><a class="link" data-href-file="/static/lections/mmf_otveti.pdf" href="#">Ответы на вопросы (рукописные 2022 г.)</a></li>
+                    <li><a class="" data-href-file="#" href="https://youtube.com/playlist?list=PLcsjsqLLSfNBxv7zAg_RQoAP9MAIZpCwz">Лучше смотреть по практике (часть 1) - Горицкий А.Ю.</a></li>
+                    <li><a class="" data-href-file="#" href="https://youtube.com/playlist?list=PLcsjsqLLSfNDc7MN2eCm1r54x_WspgAze">Лучше смотреть по практике (часть 2) - Горицкий А.Ю.</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
-    <div class="semestr4">
-        <h3> 4 семестр </h3>
-            <h5>Теория вероятностей</h5>
-                <ul class="rounded-list">
-                        <li><a class="link" data-href-file="/static/lections/terver_lections.pdf" href="#">Лекции (рукописные 2022 г.) - Дубков А.А.</a></li>
-                        <li><a class="link" data-href-file="/static/lections/terver_practice.pdf" href="#">Практика + Решение некоторых задач - (рукописные 2022 г.) - Дубков А.А.</a></li>
-                        <li><a class="link" data-href-file="/static/lections/terver_gavrilin.pdf" href="#">Задачник - Гаврилин А.Т. / Дубков А.А.</a></li>
-                        <li><a class="link" data-href-file="/static/lections/terver_questions.doc" href="#">Вопросы к экзамену (2022 г.)</a></li>
-                        <li><a class="link" data-href-file="/static/lections/terver_basic_formulas.pdf" href="#">Основные формулы для экзамена</a></li>
-                </ul>
-            <h5>Методы математической физики</h5>
-                <ul class="rounded-list">
-                        <li><a class="link" data-href-file="/static/lections/mmf_lections_smirnov.pdf" href="#">Лекции для РФ - Смирнов И.П.</a></li>
-                        <li><a class="link" data-href-file="/static/lections/mmf_program_lections.pdf" href="#">Программа лекций - Солдатов И.Н.</a></li>
-                        <li><a class="link" data-href-file="/static/lections/mmf_uchebnik_vladimirov.pdf" href="#">Учебник по ММФ - Владимиров В.С.</a></li>
-                        <li><a class="link" data-href-file="/static/lections/mmf_zadachnik_vladimirov.pdf" href="#">Задачник - Владимиров В.С.</a></li>
-                        <li><a class="link" data-href-file="/static/lections/mmf_questions.pdf" href="#">Вопросы к экзамену (2022 г.) - Солдатов И.Н.</a></li>
-                        <li><a class="link" data-href-file="/static/lections/mmf_otveti.pdf" href="#">Ответы на вопросы (рукописные 2022 г.)</a></li>
-                        <li><a class="" data-href-file="#" href="https://youtube.com/playlist?list=PLcsjsqLLSfNBxv7zAg_RQoAP9MAIZpCwz">Лучше смотреть по практике (часть 1) - Горицкий А.Ю.</a></li>
-                        <li><a class="" data-href-file="#" href="https://youtube.com/playlist?list=PLcsjsqLLSfNDc7MN2eCm1r54x_WspgAze">Лучше смотреть по практике (часть 2) - Горицкий А.Ю.</a></li>
-                </ul>
 
-    </div>
-    <div class="semestr3">
-        <h3> 3 семестр </h3>
-            <h5>Теория функций комплексного переменного</h5>
-                <ul class="rounded-list">
+    <div>
+        <h3> 3 Семестр </h3>
+        <ul>
+            <li>
+                <a href="#" class="drop-locator">
+                    <i class="bi bi-caret-down"></i>
+                    <i class="bi bi-caret-up"></i>
+                    <span class="drop-h">Теория функций комплексного переменного</span>
+                </a>
+                <ul class="drop rounded-list">
                     <li><a class="link" data-href-file="/static/lections/tfcp_lections.pdf" href="#">Лекции (рукописные 2021 г.) - Лапинова C.А.</a></li>
                     <li><a class="link" data-href-file="/static/lections/tfcp_practice.pdf" href="#">Практика (рукописные 2021 г.) - Лапинова C.А.</a></li>
                     <li><a class="link" data-href-file="http://read.newlibrary.ru/read.php/pdf=15234" href="#">Учебник (по которому читают лекции) - ТФКП Свешников А.Г. / Тихонов А.Н.</a></li>
@@ -49,8 +58,14 @@
                     <li><a class="link" data-href-file="/static/lections/tfcp_exam.pdf" href="#">Задачи с экзамена (2021 г.) - Лапинова С.А.</a></li>
                     <li><a  href="/static/lections/tfcp_questions.doc">Вопросы к экзамену (2021 г.) - Лапинова С.А.</a></li>
                 </ul>
-            <h5>Векторный и тензорный анализ</h5>
-                 <ul class="rounded-list">
+            </li>
+            <li>
+                <a href="#" class="drop-locator">
+                    <i class="bi bi-caret-down"></i>
+                    <i class="bi bi-caret-up"></i>
+                    <span class="drop-h">Векторный и тензорный анализ</span>
+                </a>
+                 <ul class="drop rounded-list">
                     <li><a class="link" data-href-file="/static/lections/vta_lections.pdf" href="#">Лекции (рукописные 2021 г.) - Дубков А.А</a></li>
                     <li><a class="link" data-href-file="/static/lections/vta_lections_distance.pdf" href="#">Лекции (половина дистанционных 2021 г.) - Дубков А.А.</a></li>
                     <li><a class="link" data-href-file="/static/lections/vta_lections_distance.pdf" href="#">Лекции (пособие) - Кошелев В.Н.</a></li>
@@ -59,16 +74,25 @@
                     <li><a class="link" data-href-file="/static/lections/vta_metodichka_tenzori.pdf" href="#">Методичка по тензорам - Кошелев В.Н.</a></li>
                     <li><a class="" data-href-file="/static/lections/vta_exams.doc" href="#">Вопросы к экзамену (2021 г.) - Дубков А.А.</a></li>
                 </ul>
+            </li>
+        </ul>
     </div>
-    <div class="semestr2">
-        <h3> 2 семестр </h3>
-            <h5>Молекулярная физика</h5>
-                <ul class="rounded-list">
+    <div class="">
+        <h3> 2 Семестр</h3>
+        <ul>
+            <li>
+                <a href="#" class="drop-locator">
+                    <i class="bi bi-caret-down"></i>
+                    <i class="bi bi-caret-up"></i>
+                    <span class="drop-h">Молекулярная физика</span>
+                </a>
+                <ul class="drop rounded-list">
                     <li><a class="link" data-href-file="/static/lections/molekular_lections.pdf" href="#">Лекции (рукописные 2021 г.) - Бакунов М.И.</a></li>
                 </ul>
+            </li>
+        </ul>
     </div>
-    <div class="semestr1">
-        <h3> 1 семестр </h3>
+    <div>
     </div>
     <div class="preview">
         <embed id="preview" src="{% static 'laboratories/lc_filters4.pdf' %}" width="700px" height="700px"/>
