@@ -2,7 +2,27 @@
   --color: red;
 }
 
-
+.backgroundleft{
+    width: 50%;
+    height: 100%;
+    position:fixed;
+    bottom: 0px;
+    left:0px;
+    background-image: url(/static/image/ba.png); /* Путь к фоновому изображению */
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-attachment: fixed;
+}
+body {
+    background-image: url(/static/image/ba.png); /* Путь к фоновому изображению */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-attachment: fixed;
+    background-image: url(/static/image/backright.png); /* Путь к фоновому изображению */
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-attachment: fixed;
+}
 
 .content{
     position: relative;

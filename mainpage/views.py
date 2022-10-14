@@ -16,4 +16,8 @@ def converter(request):
     return render(request, 'converter.html')
 
 
+def test(request):
+    return render(request, 'test.html')
+
+
 
