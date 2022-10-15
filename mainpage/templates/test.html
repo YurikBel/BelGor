@@ -1,65 +1,64 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block title %} Главная {% endblock %}
-{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/test.css' %}">{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="/static/style/OwlCarousel/owl.carousel.min.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'style/test.css' %}">
+{% endblock %}
 {% block content %}
-<div class="slider-wrap">
-  <div id="card-slider" class="slider">
-    <div class="slider-item">
-        <div class="animation-card_image">
-            <img src="https://m.media-amazon.com/images/M/MV5BMTk5Mzc4ODU0Ml5BMl5BanBnXkFtZTcwNjU1NTI0Mw@@._V1_UY317_CR12,0,214,317_AL_.jpg" alt="">
-        </div>
-        <div class="animation-card_content">
-            <h4 class="animation-card_content_title title-2">Charlize Theron 1</h4>
-            <p class="animation-card_content_description p-2">With no contractual commitments comes the freedom of having top notch content created whenever.</p>
-            <p class="animation-card_content_city">New York, NY</p>
-        </div>
-    </div>
-    <div class="slider-item">
-        <div class="animation-card_image">
-            <img src="https://m.media-amazon.com/images/M/MV5BMTk5Mzc4ODU0Ml5BMl5BanBnXkFtZTcwNjU1NTI0Mw@@._V1_UY317_CR12,0,214,317_AL_.jpg" alt="">
-        </div>
-        <div class="animation-card_content">
-            <h4 class="animation-card_content_title title-2">Charlize Theron 2</h4>
-            <p class="animation-card_content_description p-2">With no contractual commitments comes the freedom of having top notch content created whenever.</p>
-            <p class="animation-card_content_city">New York, NY</p>
-        </div>
-    </div>
-    <div class="slider-item">
-        <div class="animation-card_image">
-            <img src="https://m.media-amazon.com/images/M/MV5BMTk5Mzc4ODU0Ml5BMl5BanBnXkFtZTcwNjU1NTI0Mw@@._V1_UY317_CR12,0,214,317_AL_.jpg" alt="">
-        </div>
-        <div class="animation-card_content">
-            <h4 class="animation-card_content_title title-2">Charlize Theron 3</h4>
-            <p class="animation-card_content_description p-2">With no contractual commitments comes the freedom of having top notch content created whenever.</p>
-            <p class="animation-card_content_city">New York, NY</p>
-        </div>
-    </div>
-    <div class="slider-item">
-        <div class="animation-card_image">
-            <img src="https://m.media-amazon.com/images/M/MV5BMTk5Mzc4ODU0Ml5BMl5BanBnXkFtZTcwNjU1NTI0Mw@@._V1_UY317_CR12,0,214,317_AL_.jpg" alt="">
-        </div>
-        <div class="animation-card_content">
-            <h4 class="animation-card_content_title title-2">Charlize Theron 4</h4>
-            <p class="animation-card_content_description p-2">With no contractual commitments comes the freedom of having top notch content created whenever.</p>
-            <p class="animation-card_content_city">New York, NY</p>
-        </div>
-    </div>
-    <div class="slider-item">
-        <div class="animation-card_image">
-            <img src="https://m.media-amazon.com/images/M/MV5BMTk5Mzc4ODU0Ml5BMl5BanBnXkFtZTcwNjU1NTI0Mw@@._V1_UY317_CR12,0,214,317_AL_.jpg" alt="">
-        </div>
-        <div class="animation-card_content">
-            <h4 class="animation-card_content_title title-2">Charlize Theron 5</h4>
-            <p class="animation-card_content_description p-2">With no contractual commitments comes the freedom of having top notch content created whenever.</p>
-            <p class="animation-card_content_city">New York, NY</p>
-        </div>
-    </div>
-</div>
-</div>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+	<div class="container">
 
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="customers-testimonials" class="owl-carousel">
+
+            <!--TESTIMONIAL 2 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                <p>Этот блог создан студентами направления <i>"Фундаментральная Радиофизика" Радиофизического факультета ННГУ им.Лобачевского</i>, с целью
+                  сохранения всевозможных лекций, работ и полезных материалов, накопленных за время обучения.
+                  Мы надеемся, что этот сайт будет вам полезен и вы сможете
+                  найти ответы на интересующие вопросы.
+                </p>
+              </div>
+              <div class="testimonial-name">ANNA ITURBE</div>
+            </div>
+            <!--END OF TESTIMONIAL 2 -->
+            <!--TESTIMONIAL 3 -->
+            <div class="item">
+              <div class="shadow-effect">
+              <img class="img-circle" src="/static/image/ratim.jpg" alt="">
+                <p>Авторы ни в коем случае не поддерживают списывание и рекомендуют все
+                  выкладки проделывать самостоятельно.
+                </p>
+              </div>
+              <div class="testimonial-name">LARA ATKINSON</div>
+            </div>
+            <!--END OF TESTIMONIAL 3 -->
+            <!--TESTIMONIAL 4 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                <p>С вопросами добавления своего материала на этот ресурс обращайтесь по
+                  любому из контактов, указанных ниже.
+                </p>
+              </div>
+              <div class="testimonial-name">IAN OWEN</div>
+            </div>
+            <!--END OF TESTIMONIAL 4 -->
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- END OF TESTIMONIALS -->
 {% endblock %}
 {% block js %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/static/style/OwlCarousel/owl.carousel.min.js"></script>
 <script src="/static/javaScript/test.js">
 </script>
 {% endblock %}
