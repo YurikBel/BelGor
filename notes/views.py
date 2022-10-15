@@ -11,3 +11,7 @@ def cpp(request):
 
 def graph1(request):
     return render(request, 'convP.html')
+
+
+def graphBase(request):
+    return render(request, 'grPy.html')

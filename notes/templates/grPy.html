@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Kонвертер Python{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/listing.css' %}">{% endblock %}
+{% block content %}
+<div class="list">
+<h5>Построение графиков (база)</h5>
+    <p>
+        В этой статье показаны основные принципы и методы построения графиков на Python, используя библиотеки matplotlib
+        и numpy. Если вы ни разу не строили графики, используя эти библиотеки, советуем ознакомиться с данным материалом,
+        прежде чем приступать к прочетнию других статей.
+    </p>
+    <p>
+        Для начала необходимо импортировать библиотеки <i>matplotlib</i> (рисует графики) и <i>numpy</i> (отвечает за массивы и математические операции)
+    </p>
+    <div>
+        <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(239, 236, 244); color: rgb(88, 82, 96); padding: 0.5em;"><span class="hljs-keyword" style="color: rgb(149, 90, 231);">import</span> matplotlib.pyplot <span class="hljs-keyword" style="color: rgb(149, 90, 231);">as</span> plt
+<span class="hljs-keyword" style="color: rgb(149, 90, 231);">import</span> numpy <span class="hljs-keyword" style="color: rgb(149, 90, 231);">as</span> np</pre>
+    </div>
+    <p>
+        Если по какой то причине библиотеки не установлены, установите их через терминал
+    </p>
+    <div>
+        <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(239, 236, 244); color: rgb(88, 82, 96); padding: 0.5em;">pip install numpy
+pip install matplotlib</pre>
+    </div>
+    <p>
+        Зададим массив значений по X и по Y
+    </p>
+    <div>
+<pre class="hljs" style="display: block; overflow-x: auto; background: rgb(239, 236, 244); color: rgb(88, 82, 96); padding: 0.5em;">x = [<span class="hljs-number" style="color: rgb(170, 87, 60);">2</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">3</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">4</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">5</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">6</span>]
+y = [<span class="hljs-number" style="color: rgb(170, 87, 60);">4</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">9</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">16</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">25</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">36</span>]</pre>
+    </div>
+    <p>
+        Теперь построим этот график функцией <i>plot(x, y)</i> из объекта <i>plt</i> и выведем его с помощью <i>show</i> того же объекта
+    </p>
+    <div>
+        <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(239, 236, 244); color: rgb(88, 82, 96); padding: 0.5em;">plt.plot(x, y)
+plt.show()</pre>
+    </div>
+    <p>
+        Простейший график мы построили, теперь добавим сетку, включим побочные оси, зададим разбиение побочных осей, зададим угол наклона тиков
+        и зададим ширину побочных осей.
+    </p>
+    <div>
+<pre class="hljs" style="display: block; overflow-x: auto; background: rgb(239, 236, 244); color: rgb(88, 82, 96); padding: 0.5em;">plt.minorticks_on()  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># включили побочные оси</span>
+ax = plt.subplot()
+ax.set_xticks(np.arange(<span class="hljs-number" style="color: rgb(170, 87, 60);">0</span>, max(x), (max(x) - min(x)) / <span class="hljs-number" style="color: rgb(170, 87, 60);">20</span>))  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># задали разбиение побочных осей</span>
+plt.setp(ax.get_xticklabels(), **{<span class="hljs-string" style="color: rgb(42, 146, 146);">'rotation'</span>: <span class="hljs-number" style="color: rgb(170, 87, 60);">90</span>})  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># задали угол наклона тиков (цифр)</span>
+ax.set_yticks(np.arange(<span class="hljs-number" style="color: rgb(170, 87, 60);">0</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">50</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">3</span>))  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># разбиение для Y, тут 0 -нач. минимум, 50 - максимум, 3 - шаг главных осей </span>
+plt.setp(ax.get_yticklabels(), **{<span class="hljs-string" style="color: rgb(42, 146, 146);">'rotation'</span>: <span class="hljs-number" style="color: rgb(170, 87, 60);">45</span>})
+plt.grid(which=<span class="hljs-string" style="color: rgb(42, 146, 146);">'major'</span>,  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># настройка главных осей</span>
+         color=<span class="hljs-string" style="color: rgb(42, 146, 146);">'k'</span>,
+         linewidth=<span class="hljs-number" style="color: rgb(170, 87, 60);">0.5</span>)
+plt.grid(which=<span class="hljs-string" style="color: rgb(42, 146, 146);">'minor'</span>,  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># настройка побочных осей </span>
+         color=<span class="hljs-string" style="color: rgb(42, 146, 146);">'k'</span>,
+         linewidth=<span class="hljs-number" style="color: rgb(170, 87, 60);">0.28</span>
+         )</pre>
+    </div>
+
+    <p>
+        Часто на графиках требуется не только эксперементальная, но и теоретическая зависимость. Наложим на этот график
+        зависимость <i>y = x^3</i>
+    </p>
+    <div>
+        <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(239, 236, 244); color: rgb(88, 82, 96); padding: 0.5em;">x1 = np.linspace(<span class="hljs-number" style="color: rgb(170, 87, 60);">0</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">7</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">100</span>)  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># создаем массив объемом 100 элементов, равномерно распределенных от 0 до 7 </span>
+y1 = x1 ** <span class="hljs-number" style="color: rgb(170, 87, 60);">3</span>
+plt.plot(x1, y1)</pre>
+    </div>
+        <h4>Полный листинг кода: </h4>
+    <div>
+<pre class="hljs" style="display: block; overflow-x: auto; background: rgb(239, 236, 244); color: rgb(88, 82, 96); padding: 0.5em;"><span class="hljs-keyword" style="color: rgb(149, 90, 231);">import</span> matplotlib.pyplot <span class="hljs-keyword" style="color: rgb(149, 90, 231);">as</span> plt
+<span class="hljs-keyword" style="color: rgb(149, 90, 231);">import</span> numpy <span class="hljs-keyword" style="color: rgb(149, 90, 231);">as</span> np
+
+x1 = np.linspace(<span class="hljs-number" style="color: rgb(170, 87, 60);">0</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">7</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">100</span>)  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># создаем массив объемом 100 элементов, равномерно распределенных от 0 до 7</span>
+y1 = x1 ** <span class="hljs-number" style="color: rgb(170, 87, 60);">3</span>
+plt.plot(x1, y1)
+x = [<span class="hljs-number" style="color: rgb(170, 87, 60);">2</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">3</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">4</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">5</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">6</span>]
+y = [<span class="hljs-number" style="color: rgb(170, 87, 60);">4</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">9</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">16</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">25</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">36</span>]
+plt.plot(x, y)
+plt.minorticks_on()  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># включили побочные оси</span>
+ax = plt.subplot()
+ax.set_xticks(np.arange(<span class="hljs-number" style="color: rgb(170, 87, 60);">0</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">7</span>, <span class="hljs-number" style="color: rgb(170, 87, 60);">0.25</span>))  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># задали разбиение побочных осей 0 - минимум, 7 - максимум, 0.25 - шаг гл. осей</span>
+plt.setp(ax.get_xticklabels(), **{<span class="hljs-string" style="color: rgb(42, 146, 146);">'rotation'</span>: <span class="hljs-number" style="color: rgb(170, 87, 60);">90</span>})  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># задали угол наклона тиков (цифр)</span>
+ax.set_yticks(np.arange(<span class="hljs-number" style="color: rgb(170, 87, 60);">0</span>, max(y1), (max(y1) - min(y1)) / <span class="hljs-number" style="color: rgb(170, 87, 60);">20</span>))  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># задали автоматическое разбиение по массиву y1</span>
+plt.setp(ax.get_yticklabels(), **{<span class="hljs-string" style="color: rgb(42, 146, 146);">'rotation'</span>: <span class="hljs-number" style="color: rgb(170, 87, 60);">45</span>})
+plt.grid(which=<span class="hljs-string" style="color: rgb(42, 146, 146);">'major'</span>,  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># настройка главных осей</span>
+         color=<span class="hljs-string" style="color: rgb(42, 146, 146);">'k'</span>,
+         linewidth=<span class="hljs-number" style="color: rgb(170, 87, 60);">0.5</span>)
+plt.grid(which=<span class="hljs-string" style="color: rgb(42, 146, 146);">'minor'</span>,  <span class="hljs-comment" style="color: rgb(101, 95, 109);"># настройка побочных осей</span>
+         color=<span class="hljs-string" style="color: rgb(42, 146, 146);">'k'</span>,
+         linewidth=<span class="hljs-number" style="color: rgb(170, 87, 60);">0.28</span>
+         )
+plt.show()</pre>
+    </div>
+    <h4>Pезультат:</h4>
+    <IMG src="/static/image/notesimg/Fig1graphBase.png" style="width: 100%;">
+</div>
+{% endblock %}
