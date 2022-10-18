@@ -33,7 +33,6 @@ function changer(){
 
 function hider(){
     let locators = document.getElementsByClassName('drop-locator');
-    console.log(locators)
     for (let b of locators){
         b.addEventListener('click', function (e) {
         e.preventDefault();
