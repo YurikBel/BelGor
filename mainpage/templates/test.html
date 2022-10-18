@@ -1,70 +1,11 @@
 {% extends 'layout.html' %}
 {% load static %}
-{% block title %} Главная {% endblock %}
-{% block style %}
-<link rel="stylesheet" href="/static/style/OwlCarousel/owl.carousel.min.css" />
-<link rel="stylesheet" type="text/css" href="{% static 'style/test.css' %}">
-{% endblock %}
+{% block title %} Неформальная история {% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/test.css' %}">{% endblock %}
 {% block content %}
-<div class="slider">
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-	<div class="container">
-
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="customers-testimonials" class="owl-carousel">
-
-            <!--TESTIMONIAL 2 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img class="img-circle" src="/static/image/pencil2_big.png" alt="">
-                <p>Этот блог создан студентами <i>Радиофизического факультета ННГУ им. Лобачевского</i> с целью
-                  сохранения всевозможных лекций, работ и полезных материалов, накопленных за время обучения.
-                  Мы будем очень рады, если вы сможете найти здесь что-то интересное или полезное.
-                </p>
-                <p>
-                  Блог ведётся исключительно в личных
-                  целях, в материалах могут быть ошибки, недочёты и т.п., поэтому призываем вас изучать их с умом. А за недочёты
-                  просим прощения :)
-                </p>
-              </div>
-              <div class="testimonial-name">О БЛОГЕ</div>
-            </div>
-            <!--END OF TESTIMONIAL 2 -->
-            <!--TESTIMONIAL 3 -->
-            <div class="item">
-              <div class="shadow-effect">
-              <img class="img-circle" src="/static/image/ratim.jpg" alt="">
-                <p>Авторы ни в коем случае не поддерживают списывание и рекомендуют все
-                  выкладки проделывать самостоятельно.
-                </p>
-              </div>
-              <div class="testimonial-name">ВАЖНО</div>
-            </div>
-            <!--END OF TESTIMONIAL 3 -->
-            <!--TESTIMONIAL 4 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
-                <p>С вопросами добавления своего материала на этот ресурс или по замеченным недочётам обращайтесь по
-                  любому из контактов, указанных ниже.
-                </p>
-              </div>
-              <div class="testimonial-name">СВЯЗАТЬСЯ С НАМИ</div>
-            </div>
-            <!--END OF TESTIMONIAL 4 -->
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-    <!-- END OF TESTIMONIALS -->
+<div>
+    <div class="preview">
+        <embed id="preview" src="{% static 'laboratories/lc_filters4.pdf' %}" width="100%" height="1000px"/>
+    </div>
 </div>
-{% endblock %}
-{% block js %}
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="/static/style/OwlCarousel/owl.carousel.min.js"></script>
-<script src="/static/javaScript/test.js">
-</script>
 {% endblock %}
