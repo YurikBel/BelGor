@@ -19,5 +19,6 @@ def converter(request):
 def test(request):
     return render(request, 'test.html')
 
-
+def graph(request):
+    return render(request, 'graph.html')
 

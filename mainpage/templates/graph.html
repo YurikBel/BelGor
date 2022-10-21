@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Лабораторные {% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/labs.css' %}">{% endblock %}
+{% block content %}
+<div>
+    <textarea id="input" style="width: 500px; height: 300px;">
+        50  10  0.265  0.5
+        40  8.5  0.23  0.5
+        30  6.8  0.205  0.5
+        20  5  0.16  0.5
+    </textarea>
+    <button id="click"> Построить </button>
+    <div>
+        <svg id='graph' version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" width="400" height="500" style="">
+            <line x1="0" y1="200" x2="200" y2="200" stroke="black" />
+            <line x1="0" y1="0" x2="0" y2="200" stroke="black" />
+            <circle cx="0" cy="20" r="3" fill="blue" stroke="none" stroke-width="0"></circle>
+        </svg>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="/static/javaScript/graph.js">
+</script>
+{% endblock %}

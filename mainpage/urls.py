@@ -7,4 +7,5 @@ urlpatterns = [
     path('labs', views.labs, name='mainpage.labs'),
     path('converter', views.converter, name='mainpage.converter'),
     path('test', views.test, name='mainpage.test'),
+    path('graph', views.graph, name='mainpage.graph'),
 ]
