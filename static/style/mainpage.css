@@ -78,10 +78,72 @@
 }
 .slider{
     position: relative;
-    top:10%;
+    top:100px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+    border-bottom-width: 1px;
+    margin-bottom: 10px;
 }
 
 #rat{
     width: 200px;
 
 }
+
+
+#author {
+    display: block;
+    text-align: right;
+}
+
+.quote{
+    position: relative;
+    top: 150px;
+    width: 70%;
+    left: 15%;
+}
+
+.news{
+    position: relative;
+    top: 150px;
+    width: 70%;
+    left: 15%;
+    padding: 10px;
+}
+
+.contacts{
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: space-between;
+    border-top-style: solid;
+    border-top-color: red;
+    border-top-width: 1px;
+    padding-bottom: 100px;
+
+}
+
+#text {
+    display: inline-block;
+    width:60%;
+    left:0px;
+}
+
+#svg{
+    display: inline-block;
+    width:30%;
+    right:0px;
+}
+
+.lik{
+    display: inline-block;
+    text-align:right;
+}
+
+@media (max-width:700px){
+    .news{
+        display: none;
+    }
+
+}
+

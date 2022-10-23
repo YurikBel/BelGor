@@ -28,7 +28,6 @@ body {
     position: relative;
     left: 15%;
     width: 70%;
-    height: 1000px;
     letter-spacing: 0.02em;
 }
 
@@ -157,15 +156,9 @@ color:var(--color);
 }
 
 @media (max-width:700px){
-    .carousel{
-        display: none;
-    }
     .content {
         width: 100%;
         left: 0px;
         padding: 10px;
-    }
-    .we{
-        width: 100%;
     }
 }
