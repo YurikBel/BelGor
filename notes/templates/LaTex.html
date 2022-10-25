@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} LaTex {% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/python.css' %}">{% endblock %}
+{% block content %}
+<div class="list">
+    <div class="head">
+        <h2>LaTex</h2>
+        <p><i>В этом отделе опубликованы заметки, статьи и небольшие лайфхаки по LaTex</i></p>
+    </div>
+    <div class="article">
+       <h5>Название</h5>
+        <p>
+            Описание статьи<br>
+            <a href="/notes/LaTexStat1">Открыть статью</a>
+        </p>
+    </div>
+</div>
+<div class="map">
+    <h3>Картa отдела:</h3>
+    <ul>
+        <li><a class="elem" href="#">Название 1</a></li>
+    </ul>
+</div>
+
+
+{% endblock %}

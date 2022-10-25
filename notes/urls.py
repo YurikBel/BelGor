@@ -7,4 +7,6 @@ urlpatterns = [
     path('cpp', views.cpp, name='notes.cpp'),
     path('graph1', views.graph1, name='notes.graph1'),
     path('graphBase', views.graphBase, name='notes.graphBase'),
+    path('LaTex', views.LaTex, name='notes.LaTex'),
+    path('LaTexStat1', views.LaTexStat1, name='notes.LaTexStat1'),
 ]

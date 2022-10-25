@@ -15,3 +15,11 @@ def graph1(request):
 
 def graphBase(request):
     return render(request, 'grPy.html')
+
+
+def LaTex(request):
+    return render(request, 'LaTex.html')
+
+
+def LaTexStat1(request):
+    return render(request, 'LaTexStat1.html')
