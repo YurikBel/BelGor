@@ -126,6 +126,7 @@ nav.shift ul li a.nav-link:hover:after {
 .dropdown-item:hover {
     background-color: var(--color) !important;
     color: white !important;
+    opacity: 0.6;
 }
 
 .elem {

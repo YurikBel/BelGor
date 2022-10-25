@@ -21,3 +21,14 @@
 a{
     text-decoration: none;
 }
+
+
+@media (max-width:700px){
+    .map {
+        display: none;
+    }
+
+    .list{
+        width: 100%;
+    }
+}
