@@ -145,5 +145,8 @@
         display: none;
     }
 
+    .item{
+    height: 600px;
+    }
 }
 
