@@ -23,3 +23,6 @@ def LaTex(request):
 
 def LaTexStat1(request):
     return render(request, 'LaTexStat1.html')
+
+def latex_tikz(request):
+    return render(request, 'latex_tikz.html')

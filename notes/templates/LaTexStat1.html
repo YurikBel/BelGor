@@ -4,7 +4,305 @@
 {% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/listing.css' %}">{% endblock %}
 {% block content %}
 <div class="list">
-    когда копируешь с сайта листинга вставляй в отдельный див и в нем не ставь табов никаких ато код листинга съезжает
-    уж лучше он будет ровный но вложенность не соблюдена
+    <div>
+        <h4>Оформление отчёта в LaTeX</h4>
+        <h5>
+            Где и как писать отчёт?
+        </h5>
+            <p>
+                Для написания отчёта лучше использовать программу <b>texstudio</b>, которую можно скачать с <a href="https://www.texstudio.org/">официального сайта</a>. Это довольно удобная среда, в которой уже
+                заложено много функций в виде иконок, так что, особо не напрягаясь, уже можно красиво оформить статью или отчёт.
+            </p>
+        <p><b><n>Отличное руководство по вёрстке в системе LaTeX - это книжка Львовского С.М.</n></b> (предлагаем найти книжку в интернете самостоятельно)</p>
+            <p>
+                По сути LaTeX это как отдельный язык программирования, поэтому к процедуре написания текста стоит относиться как к оформлению своеобразного кода (в виде блоков, преамбул и т.п.).
+                Важно отметить, что любая команда в техе начинается с обратного слеша <b>\...</b>.
+                Для начала нужно создать файл расширения <b>.tex</b> и задать начальные параметры документа. Мы будем сразу описывать основные моменты на примере отчёта с физического практикума. Основной блок (начало и конец документа)
+                задаётся ключевыми словами <b>\begin{document}...\end{document}</b>. Так задаётся каждый отдельный блок или структура в LaTeX. В начале любого документа импортируются все нужные пакеты и задаются
+                параметры документа:
+            </p>
+            <p>
+                <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">documentclass</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[a4paper, 12pt]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{article}</span></span>    <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Документ формата А4, размер шрифта 12pt</span>
+
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[utf8]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{inputenc}</span></span>    <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Задание кодировки</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[english,russian]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{babel}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Поддержка русского и английского языка</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{cmap}</span></span>     <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Правильная поддержка PDF документов и правильная кодировка символов</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[T2A]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{fontenc}</span></span>    <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Дополнительный текстовый процессор</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{graphicx}</span></span>     <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Библиотека для включения рисунков и графиков \includegraphics</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[intlimits]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{amsmath}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Адаптация пределов для интегрирования с математическими формулами</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{amssymb}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{wrapfig}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Библиотека для вставки картинок параллельно с текстом</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[table,xcdraw]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{xcolor}</span></span>    <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Библиотека для закраски табличек</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{indentfirst}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Добавляется сразу красную строку в тексте</span>
+
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{babel,blindtext}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Фиксим постановку графиков и подписец</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{float}</span></span>
+
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">linespread</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{1.2}</span></span>    <span class="hljs-comment" style="color: rgb(119, 105, 119);">%  Расстояние между строчками</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">oddsidemargin</span>=<span class="hljs-number" style="color: rgb(166, 89, 38);">-18pt</span></span>      <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Задают отступы для листа (границы размещения текста)</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">topmargin</span> = <span class="hljs-number" style="color: rgb(166, 89, 38);">-24pt</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">textwidth</span> = <span class="hljs-number" style="color: rgb(166, 89, 38);">484pt</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">textheight</span> = <span class="hljs-number" style="color: rgb(166, 89, 38);">678pt</span></span></pre>
+            </p>
+        <p>
+            Важной частью красивого оформления являются колонтитулы, которые реализуются с помощью пакета <b>fancyhdr</b>. На самом деле он содержит много функций, которые можно загуглить в интернете.
+            Вполне легко сообразить их назначения по названию методов, и лучше понимать аббревиатуры параметров:
+        </p>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td> E:</td>
+                <td> Even page </td>
+                <td> Чётная страница </td>
+            </tr>
+            <tr>
+                <td> O:</td>
+                <td> Odd page </td>
+                <td> Нечётная страница </td>
+            </tr>
+            <tr>
+                <td> L:</td>
+                <td> Left field </td>
+                <td> Левое поле </td>
+            </tr>
+            <tr>
+                <td> C:</td>
+                <td> Center field </td>
+                <td> Центральное поле </td>
+            </tr>
+            <tr>
+                <td> R:</td>
+                <td> Right field </td>
+                <td> Правое поле </td>
+            </tr>
+            <tr>
+                <td> H:</td>
+                <td> Header </td>
+                <td> Заголовок </td>
+            </tr>
+            <tr>
+                <td> F:</td>
+                <td> Footer </td>
+                <td> Нижний колонтитул </td>
+            </tr>
+        </table>
+        <p>
+            Параметры задаются так же до начала документа:
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">usepackage</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{fancyhdr}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">pagestyle</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{fancy}</span></span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% этим мы убеждаемся, что заголовки глав и </span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% разделов используют нижний регистр.</span>
+
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fancyfoot</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fancyfoot</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[CF]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\bfseries\thepage}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Нумерация страниц по центру</span>
+
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fancyhead</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[L]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\textit{Опыт какой-то там}</span></span>} <span class="hljs-comment" style="color: rgb(119, 105, 119);">%  Надпись сверху-слева у колонтитула</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fancyhead</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[RE]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\bfseries\leftmark}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fancyhead</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[R]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Горюнов О.А., Плешков Д.С., Сиднев А.А.}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Надпись сверху-справа у колонтитула</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">renewcommand</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\headrulewidth}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{0.5pt}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">renewcommand</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\footrulewidth}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{0pt}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">addtolength</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\headheight}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{0pt}</span></span> <span class="hljs-comment" style="color: rgb(119, 105, 119);">% оставляем место для линейки</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fancypagestyle</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{plain}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{%
+	\fancyhead{}</span></span> <span class="hljs-comment" style="color: rgb(119, 105, 119);">% на обычных страницах убираем колонтитулы</span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">renewcommand</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\headrulewidth}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{0pt}</span></span> <span class="hljs-comment" style="color: rgb(119, 105, 119);">% и линейку</span>
+}
+
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">setlength</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\parskip}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{0.2cm}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);"></span></pre>
+        </p>
+        <h5>Титульный лист</h5>
+        <p> Дальше мы начинаем оформлять сам документ. Обычно не обращают особого внимания на оформление титульного листа с содержанием, но строго говоря, это важно в каких-то документах и статьях.
+            Поэтому, необходимые размеры и отступы всегда смотрите в правилах оформления того издателя, для которого вы пишете свой отчёт. Мы приведём пример нашего титульного листа, с которым написаны наши
+            лабораторные работы на сайте.
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{document}</span></span>
+
+	<span class="hljs-comment" style="color: rgb(119, 105, 119);">% НАЧАЛО ТИТУЛЬНОГО ЛИСТА</span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{center}</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">large</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Нижегородский государственный университет имени Н. И. Лобачевского}</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">\</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">normalsize</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Радиофизический факультет}</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">\</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">line</span></span>(1,0){350}
+
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Large</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\textbf{Отчёт по лабораторной работе}</span></span>}<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">\</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">large</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\textbf{Опыт какой-то там}</span></span>}<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">\</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{center}</span></span>
+
+
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">normalsize</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{
+		\begin{flushright}</span></span>
+			<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">textbf</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Выполнили (№ гр):}</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">\</span></span>
+			Иванов Иван Иванович
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{flushright}</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{center}</span></span> 2022 г. <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{center}</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">thispagestyle</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{empty}</span></span> <span class="hljs-comment" style="color: rgb(119, 105, 119);">% выключаем отображение номера для этой страницы</span>
+
+		<span class="hljs-comment" style="color: rgb(119, 105, 119);">% КОНЕЦ ТИТУЛЬНОГО ЛИСТА</span></pre>
+        </p>
+        <p>
+            <b>\hfill \break</b> используется для создания пустых строк. Так с помощью них можно подогнать отступы для текста. Далее командой <b>\tableofcontents</b> создаётся
+            лист с содержанием документа, и командой <b>\clearpage</b> переходит на чистый лист. Далее зависит всё от вашей задачи. Мы лишь отметим основные моменты, которые нам пригодились при оформлении отчётов.
+            Во-первых, это добавление секции в содержание без нумерации. На примере оформления протокола:
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">{<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">centering</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">subsection*</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Протокол}</span></span> }
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">addcontentsline</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{toc}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{subsection}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\textbf{Протокол}</span></span>}{</pre>
+        </p>
+        <p><b>\centering</b> отвечает за отцентровку текста, поэтому его при необходимости можно просто убрать. Важно понимать как идёт нумерация секций и подсекций, для этого просто можно самим попробовать их
+            создавать командой <b>\section</b>, для подсекции объявляется ключевое слово <b>sub</b> (<b>\subsection</b>, <b>\subsubsection</b>, ...). Причём лучше ознакомиться с типами документов. В <n>article</n>
+            нумерация начинается с единицы, а например у <n>report</n> с нуля. Но отсчёт нумерации всегда можно изменить, найдя соответствующую команду.
+        </p>
+        <h5>Списки</h5>
+        <p>
+            Иногда нужно создать список. Пример создания нумерованного списка:
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{enumerate}</span></span>
+  <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span> первый элемент первого уровня содержит список
+    <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{enumerate}</span></span>
+        <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span> элемент списка второго уровня
+        <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span> второй элемент списка второго уровня
+    <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{enumerate}</span></span>
+  <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span>  второй элемент первого уровня
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{enumerate}</span></span></pre>
+        </p>
+        <p>
+            Пример создания маркированного списка:
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{itemize}</span></span>
+  <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span> Level 0 Item 0 (первый уровень)
+  <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span> Level 0 Item 1 (первый уровень)
+  <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{itemize}</span></span>
+    <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span> Level 1 Item
+    <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{itemize}</span></span>
+      <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span> Level 2 Item
+      <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{itemize}</span></span>
+        <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">item</span></span> Level 3 Item
+      <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{itemize}</span></span>
+    <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{itemize}</span></span>
+  <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{itemize}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{itemize}</span></span></pre>
+        </p>
+        <h5>Вставка картинки/графика после текста</h5>
+        <p>
+            На самом деле картинки можно рисовать и в самом техе, но с использованием специальной библиотеки <a>tikz</a>. Можно и просто импортировать график или рисунок как картинку. Только важно сохранять
+        всё в одной папке с проектом (можно создать подпапку с проектом для удобства). Для этого используют <b>\begin{figure}[]...\end{figure}</b>; просто создаётся отдельное пространство для фигуры, причём в
+        квадратных скобках можно указать параметры позиционирования (например <b>h</b> перенесёт фигуру на новую страницу). Пример кода:
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{figure}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[h]</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">centering</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">includegraphics</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[width=0.65\linewidth]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{image}</span></span>   <span class="hljs-comment" style="color: rgb(119, 105, 119);">% width = размер (0 - 1)</span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">caption</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Подпись}</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">label</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{fig:parres}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{figure}</span></span></pre>
+        </p>
+        <h5>Вставка картинки параллельно с текстом</h5>
+        <p>
+            Аналогично можно вставить изображение и вместе с текстом. Для этого используется команда <b>\begin{wrapfigure}...\end{wrapfigure}</b>. Однако нужно учитывать, что картинка хорошо вставляется, когда
+        она полностью заполнена текстом, иначе придётся подправлять, используя <b>\hfill \break</b>. Пример реализации вместе с текстом:
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{wrapfigure}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{l}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{0.5\textwidth}</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">includegraphics</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[width=0.45\textwidth]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{ris3}</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">caption</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Силовые линии электрического поля и эквипотенциальные поверхности между электродами лампы в плоской модели.}</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">label</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{wrapfigure}</span></span>
+
+	Энергия электронов, испытывающих соударения в различных точках слоя, могут различаться на величину порядка
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">[</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Delta</span></span> W_<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">lambda</span>=</span>e<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">lambda</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{d\varphi}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{dn}</span></span>,<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">]</span></span>
+	где <span class="hljs-formula">$<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{d\varphi}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{dn}</span></span>$</span> - производная потенциала по нормали к <span class="hljs-formula">$S_1$</span>.
+
+	Разброс по энергиям на <span class="hljs-formula">$<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Delta</span></span> W_<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">lambda</span></span>$</span> расширяет максимум анодно-сеточной характеристики и уменьшает крутизну падающего участка.
+
+
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">hfill</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">break</span></span>
+
+	Проще всего это понять на "плоской модели" <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span>со сплошной сеткой, проницаемой для электронов. В такой модели электрические поля между катодом и сеткой, сеткой и анодом однородны, а эквипотенциальные поверхности, показанные на рис. 3 штриховыми линиями, представляют собой плоскости, параллельные электродам.</pre>
+        </p>
+        <p>
+            Там так же есть несколько параметров <b>{r}</b> - вставка картинки справа на странице (<b>{l}</b> - слева). Все числовые параметры задают размер изображения и размер области, занимаемой фигурой.
+        </p>
+        <h5>Две картинки рядом</h5>
+        <p>
+            Реализуется аналогично вставке обычного изображения. Только для фигуры используем <b>minipage</b>:
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{center}</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{figure}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[H]</span></span>
+			<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{minipage}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{.5\textwidth}</span></span>
+				<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">centering</span></span>
+				<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">includegraphics</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[width=.95\linewidth]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{ris1}</span></span>
+				<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">caption</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Принципиальная схема экспериментальной установки.}</span></span>
+				<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">label</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{fig:parres}</span></span>
+			<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{minipage}</span></span>
+			<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{minipage}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{.5\textwidth}</span></span>
+				<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">centering</span></span>
+				<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">includegraphics</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[width=.95\linewidth]</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{ris2}</span></span>
+				<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">caption</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Анодно-сеточная характеристика газонаполненной лампы.}</span></span>
+				<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">label</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{fig:parres}</span></span>
+			<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{minipage}</span></span>
+		<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{figure}</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{center}</span></span></pre>
+        </p>
+        <h5>Таблицы</h5>
+        <p>
+            Про ручное оформление таблиц можно посмотреть у Львовского в книге. Но при работе с большим количеством данных это неудобно. Поэтому здесь просто рекомендуем использовать
+            онлайн генератор таблиц <a href="https://www.tablesgenerator.com/">Tables Generator</a>
+        </p>
+        <h5>Формулы</h5>
+        <p>
+            Немного уделим внимание написанию формул. Это реализуется так же с помощью специальных команд, и сначала может показаться это сложным и непонятным. Но спустя время тренировок, вы сможете спокойно их
+            набирать как обычный текст. Лучше почитать про оформление формул у Львовского, а для математических символов воспользоваться следующим <a href="http://tex.imm.uran.ru/tex/2e/lshort2e/node52.html">сайтом</a>.
+        </p>
+        <p>
+            Если формула используется вместе с текстом, то лучше использовать <b>$...$</b>, где на месте троеточия пишется формула. Так формула никуда не съезжает и подгоняет свой размер под текст.
+            Для выделения формулы отдельно используют <b>\[...\]</b>. А для создания маркировки формулы также добавляется внутри <b>\eqno(1.1)</b>. Существует много команд под разные нужды, лучше просто поискать в
+            интернете.
+        </p>
+        <p>
+            Пример кода использования формул приведён ниже:
+        </p>
+        <p>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">После прохождения пластинки <span class="hljs-formula">$<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">lambda</span></span>/4$</span> возникает эллиптическая поляризация, так как пластинка повёрнута на <span class="hljs-formula">$45^<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">circ</span></span>$</span> (т.е. находится в диагональном положении) можно показать на основе формулы (7), что интенсивность не будет меняться:
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">[</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">text</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{Если}</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Delta</span></span> n d=<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\lambda}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{4}</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Rightarrow</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\delta}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{2}</span> = </span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\pi}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{4}</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Rightarrow</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span>sin^2(<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\delta}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{2}</span></span>)=<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{1}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{2}</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">]</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">[</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">text</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{В диагональном положении }</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">alpha</span>=</span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\pi}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{4}</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Rightarrow</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">sin</span></span>2<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">alpha</span> = <span class="hljs-number" style="color: rgb(166, 89, 38);">1</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">]</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">[</span></span>I=I_o[cos^2(<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">beta</span></span> - <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\pi}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{4}</span></span>)-<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{1}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{2}</span></span>sin2<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">beta</span></span>]<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">]</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">[</span></span>cos^2(<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">beta</span></span> - <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{\pi}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{4}</span></span>)=<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{1+cos(2\beta-\pi/2)}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{2}</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">]</span></span>
+	<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">[</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Rightarrow</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);"> </span></span>I=I_o<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">Bigl</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[\frac{1}{2}+\frac{1}{2}sin2\beta-\frac{1}{2}sin2\beta\Bigr]</span>=</span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">frac</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{I_o}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{2}</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">]</span></span>
+	Учтём, что изначально шёл поляризованный свет, тогда <span class="hljs-formula">$I=I_<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">text</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{ист}</span></span>/4$</span>.
+	То есть не зависит от поворота анализатора (угла <span class="hljs-formula">$<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">beta</span></span>$</span>).</pre>
+        </p>
+        <h5>Полный пример отчёта</h5>
+        <p>
+            Следует учитывать, что фотографии импортируются из папки с проектом, поэтому если вы попытаетесь просто скомпилировать код ниже, tex выдаст ошибку об отсутствии изображений. Это лишь пример как мы делали отчёты на 2 курсе.
+             <a href="/static/files/example.rar">Ссылка на скачивание</a>
+        </p>
+    </div>
+    <p><span style="color:#95a5a6"><span style="font-size:12px"><span style="font-family:Courier New,Courier,monospace"><em>#Дата редактирования 25/10/2022</em></span></span></span></p>
 </div>
 {% endblock %}

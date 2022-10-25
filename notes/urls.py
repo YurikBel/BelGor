@@ -9,4 +9,5 @@ urlpatterns = [
     path('graphBase', views.graphBase, name='notes.graphBase'),
     path('LaTex', views.LaTex, name='notes.LaTex'),
     path('LaTexStat1', views.LaTexStat1, name='notes.LaTexStat1'),
+    path('latex_tikz', views.latex_tikz, name='notes.latex_tikz'),
 ]
