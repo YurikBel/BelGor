@@ -100,16 +100,18 @@
     position: relative;
     width: 70%;
     left: 15%;
+    padding: 25px;
 }
 
 .news{
     position: relative;
     width: 70%;
     left: 15%;
-    padding: 10px;
+    padding: 25px;
 }
 
 .contacts{
+    padding: 25px;
     display: flex;
     justify-content: space-between;
     border-top-style: solid;
