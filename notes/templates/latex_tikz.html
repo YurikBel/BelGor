@@ -6,7 +6,470 @@
 <div class="list">
     <div>
         <h4>Оформление отчёта в LaTeX</h4>
+        <h5>Линии</h5>
+        <p>
+            По умолчанию значения координат - в сантиметрах. Можно использовать любые единицы длины,
+            в том числе и относительные (textwidth, textheight и др.)
+        </p>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span></span> (0,0) -- (2,0) -- (3,2);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;" ><IMG src="/static/image/tikz_images/13.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Египетский треугольник 1</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[scale=0.75]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span></span> (0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/14.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Египетский треугольник 2</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span></span> (0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/15.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Толщина линий</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% options: ultra thin, very thin, thin, semithick,</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% thick, very thick, ultra thick, line width = ...</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick]</span></span> (0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/16.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Тип линий</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% dotted, loosely dotted, densely dotted</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% dashed, loosely dashed, densely dashed</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% double, double distance = ...</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[dashed, ultra thick]</span></span> (0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/17.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Цвет линий</h5>
+        <p>Обязательно нужно подключить пакет <b>xcolor</b> перед пакетом <b>tikz</b>.</p>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% \usepackage[dvipsnames, svgnames, x11names]{xcolor}</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick, Magenta]</span></span>
+(0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/19.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Заливка</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% \usepackage[dvipsnames, svgnames, x11names]{xcolor}</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick, Magenta, fill=SkyBlue]</span></span>
+(0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/20.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Оттенки</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% \usepackage[dvipsnames, svgnames, x11names]{xcolor}</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick, green!50!blue, fill=gray!25]</span></span>
+(0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/21.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Градиентная заливка</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% \usepackage[dvipsnames, svgnames, x11names]{xcolor}</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick, left color=blue, right color=red]</span></span>
+(0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/22.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Градиентная заливка (без заполнения границ)</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% \usepackage[dvipsnames, svgnames, x11names]{xcolor}</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick, left color=blue, right color=red]</span></span>
+(0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/23.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Градиентная заливка (ещё один вариант)</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% \usepackage[dvipsnames, svgnames, x11names]{xcolor}</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick, top color=SkyBlue, bottom color=Orchid]</span></span>
+(0,0) -- (3,0) -- (3,4) -- cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/24.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Стрелки</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, -&gt;, red]</span></span> (0,0) -- (4,0);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, -&gt;, red]</span></span> (0,0) -- (1,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[ultra thick, -&gt;, blue]</span></span> (0,0) -- (5,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[dashed]</span></span> (4,0) -- (5,3) -- (1,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/27.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Виды стрелок</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=latex]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, -&gt;, red]</span></span> (0,0) -- (4,0);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, -&gt;, red]</span></span> (0,0) -- (1,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[ultra thick, -&gt;, blue]</span></span> (0,0) -- (5,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[dashed]</span></span> (4,0) -- (5,3) -- (1,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/28.png" style="width: 35%;"></th>
+            </tr>
 
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=triangle 45]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, -&gt;, red]</span></span> (0,0) -- (4,0);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, -&gt;, red]</span></span> (0,0) -- (1,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[ultra thick, -&gt;, blue]</span></span> (0,0) -- (5,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[dashed]</span></span> (4,0) -- (5,3) -- (1,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/29.png" style="width: 35%;"></th>
+            </tr>
+
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=stealth]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, -&gt;, red]</span></span> (0,0) -- (4,0);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, -&gt;, red]</span></span> (0,0) -- (1,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[ultra thick, -&gt;, blue]</span></span> (0,0) -- (5,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[dashed]</span></span> (4,0) -- (5,3) -- (1,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/30.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Двусторонние стрелки</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=stealth]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[line width=3pt, &lt;-&gt;, SeaGreen]</span></span> (0,0) -- (1,1);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/31.png" style="width: 35%;"></th>
+            </tr>
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=stealth]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[line width=3pt, |-&gt;, SeaGreen]</span></span> (0,0) -- (1,1);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/31_2.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Окружность</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=latex]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span></span> (1,1) circle (2cm); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% окружность</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[blue]</span></span> (1,1) circle (2pt); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% центр</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[blue, -&gt;]</span></span> (1,1) -- (1,3); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% радиус</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/33.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Круги с заливкой</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[fill=yellow]</span></span> (0,0) circle (1);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[inner color=yellow, outer color=red]</span></span> (1,1) circle (1);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">shade</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[ball color=green]</span></span> (2,2) circle (1);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/34.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Дуга окружности</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% \draw (a,b) arc (x:y:r); углы х и у - в градусах!</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[SteelBlue, ultra thick]</span></span> (1,1) arc (20:60:2);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[SteelBlue, ultra thick]</span></span> (0,0) arc (20:60:1.5);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick]</span></span> (2,1) arc (0:-120:2);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/35.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Прямоугольники</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span></span> (0,0) rectangle (2,1);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[rounded corners=5pt]</span></span> (3,0) rectangle (6,2);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[rounded corners=5pt, top color=red,
+bottom color=yellow]</span></span> (7,2.5) rectangle (9,-1);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/36.png" style="width: 65%;"></th>
+            </tr>
+        </table>
+        <p>Другие фигуры: <b>diamond, ellipse, trapezium, semicircle, regular polygon, star, isosceles triangle, kite, dart, circular sector, cylinder,...</b></p>
+        <h5>Кривая</h5>
+        <p>Кривая выходит из точки (0, 0) под углом 90 градусов и входит в точку (2, 1.5) под углом 195 градусов.</p>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick]</span></span> (0,0) to [out=90, in=195] (2,1.5);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/39.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Кривая с двумя локальными экстремумами</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick]</span></span> (-1,3) to [out=-90,in=180] (1,-0.05) to
+[out=0,in=180] (3,2) to [out=0,in=170] (6,0.5);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/40.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Кривая с двумя локальными экстремумами (2 вариант)</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">clip</span></span> (-1.1,3.1) rectangle (6.1,-1);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick]</span></span> (-1,3) .. controls (1,-5) and (3,5) ..
+(6,0.5);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/41.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Встроенные математические функции</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">begin{tikzpicture}[&gt;=stealth]
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;]</span></span> (-2.1,0) -- (2.1,0); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Ох</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;]</span></span> (0,-0.1) -- (0,4.1); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Оу</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, blue, domain=-2:2]</span></span> plot (<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>, {<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x*</span></span><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>});
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/43.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Логарифм</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=stealth]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;]</span></span> (-0.1,0) -- (6.1,0); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Ох</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;]</span></span> (0,-2) -- (0,3); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Оу</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, blue, domain=0.05:6]</span></span> plot (<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>, {ln(<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>)+1});
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/44.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Логарифм без изломов</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=stealth]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;]</span></span> (-0.1,0) -- (6.1,0); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Ох</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;]</span></span> (0,-2) -- (0,3); <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Оу</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick, blue, domain=0.05:6, smooth, samples=200]</span></span>
+plot (<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>, {ln(<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>)+1});
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/45.png" style="width: 35%;"></th>
+            </tr>
+        </table>
+        <h5>Дополнительный список функций</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-comment" style="color: rgb(119, 105, 119);">% factorial(\x), sqrt(\x), pow(\x,y), exp(\x),</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% ln(\x), log10(\x), log2(\x),</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% abs(\x), mod(\x,y) (x modulo y),</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% round(\x) (rounds x to the nearest integer),</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% floor(\x) (the largest integer smaller than x),</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% ceil(\x) (the smallest integer larger than x),</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% sin(\x) (x is in degrees)</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% if x is expressed in radians use sin(\x r)),</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% cos(\x), cos(\x r)), tan(\x), tan(\x r)),</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% min(\x,y), max(\x,y)</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% rnd</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% ...</span></pre></th>
+                <th style="width: 50%;"></th>
+            </tr>
+        </table>
+        <h5>Надписи</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[xscale=2.0, yscale=0.8]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span></span> (0,0) -- node[below] {<span class="hljs-formula">$a$</span>} (3,0) --
+node[right] {<span class="hljs-formula">$b$</span>} (3,4) --
+node[above] {<span class="hljs-formula">$c$</span>} cycle;
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span></span> at (2,1) {<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">color</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{blue}</span></span> <span class="hljs-formula">$a^2+b^2=c^2$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/48.png" style="width: 45%;"></th>
+            </tr>
+        </table>
+        <h5>Позиционирование надписей</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;">above, below, left, right
+above left, above right,
+below left, below right
+left=5pt, above right=2cm, ...
+xshift=2pt, yshift=3.1mm,
+shift={(2pt,-2pt)}
+midway, near start, near end, sloped</pre></th>
+                <th style="width: 50%;"></th>
+            </tr>
+        </table>
+        <h5>Дополнительный пример</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[scale=0.75]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[left color=magenta, right color=yellow]</span></span>
+(0,0) -- node[below=3pt] {<span class="hljs-formula">$a$</span>} (4,0) --
+node[right=5pt] {<span class="hljs-formula">$b$</span>} (4,3) --
+cycle node[midway,above,sloped] {<span class="hljs-formula">$c=<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">sqrt</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{a^2+b^2}</span></span>$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[below left]</span></span> at (0,0) {<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">color</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{blue}</span></span><span class="hljs-formula">$B$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[below right]</span></span> at (4,0) {<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">color</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{blue}</span></span><span class="hljs-formula">$C$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[above right]</span></span> at (4,3) {<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">color</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{blue}</span></span><span class="hljs-formula">$A$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/50.png" style="width: 45%;"></th>
+            </tr>
+        </table>
+        <h5>Единичная окружность</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=stealth]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;, thin]</span></span> (-2.1,0) -- (2.1,0)
+node[below] {<span class="hljs-formula">$x$</span>}; <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Ox</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;, thin]</span></span> (0,-2.1) -- (0,2.1)
+node[left] {<span class="hljs-formula">$y$</span>}; <span class="hljs-comment" style="color: rgb(119, 105, 119);">% Oy</span>
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% Рисуем сетку</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[help lines, step=0.5, dotted, Gray]</span></span>
+(-2,-2) grid (2,2);
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% Рисуем окружность</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[very thick, blue]</span></span> (0,0) circle (1);
+<span class="hljs-comment" style="color: rgb(119, 105, 119);">% Начало координат</span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[below left]</span></span> at (0,0) {<span class="hljs-formula">$O$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/52.png" style="width: 65%;"></th>
+            </tr>
+        </table>
+        <h5>Значение на осях координат </h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=stealth, scale=0.75]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;, thin]</span></span> (-6.5,0) -- (6.5,0) node[below] {<span class="hljs-formula">$x$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;, thin]</span></span> (0,-2) -- (0,2) node[left] {<span class="hljs-formula">$y$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[thick,magenta,smooth,samples=200,domain=-2*pi:2*pi]</span></span>
+plot (<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>, {sin(<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span> r)});
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">foreach</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">y</span></span> in {-1,1}
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[shift={(0,\y)}]</span></span> (2pt,0pt) -- (-2pt,0pt) node[left]
+{<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">footnotesize</span></span> <span class="hljs-formula">$<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">y</span></span>$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/53.png" style="width: 100%;"></th>
+            </tr>
+        </table>
+        <h5>Рисование в цикле</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[scale=0.6]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">foreach</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span> in {1,2,3}
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[ultra thick]</span></span> (0,0) circle (<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/54.png" style="width: 45%;"></th>
+            </tr>
+        </table>
+        <h5>Вложенный цикл</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[scale=0.75]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">foreach</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span> in {1,2,...,5}
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">foreach</span></span> <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">y</span></span> in {1,...,5}
+{
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span></span> (<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>,<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">y</span></span>) +(-.5,-.5) rectangle ++(.5,.5);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span></span> (<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>,<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">y</span></span>) node{<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">small</span></span> <span class="hljs-formula">$<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">x</span></span>, <span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">y</span></span>$</span>};
+}
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/55.png" style="width: 45%;"></th>
+            </tr>
+        </table>
+         <h5>Формула квадрата суммы</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[Tomato]</span></span> (0,0) rectangle (3,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[blue]</span></span> (3,3) rectangle (4,4);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[green]</span></span> (0,3) rectangle (3,4);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">fill</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[green]</span></span> (3,0) rectangle (4,3);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">path</span></span> (0,0) -- node[left] {<span class="hljs-formula">$a$</span>} (0,3) --
+node[left] {<span class="hljs-formula">$b$</span>} (0,4);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">path</span></span> (0,0) -- node[below=3pt] {<span class="hljs-formula">$a$</span>} (3,0) --
+node[below] {<span class="hljs-formula">$b$</span>} (4,0);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[circle,fill=white,inner sep=2pt]</span></span>
+at (1.5,1.5) {<span class="hljs-formula">$a^2$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[circle,fill=white,inner sep=2pt]</span></span>
+at (3.5,3.5) {<span class="hljs-formula">$b^2$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[ellipse,fill=white,inner sep=2pt]</span></span>
+at (1.5,3.5) {<span class="hljs-formula">$a<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">cdot</span></span> b$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[ellipse,fill=white,inner sep=2pt,rotate=90]</span></span>
+at (3.5,1.5) {<span class="hljs-formula">$a<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">cdot</span></span> b$</span>};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span></pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/57.png" style="width: 75%;"></th>
+            </tr>
+        </table>
+        <h5>Блок схема</h5>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th style="width: 50%;"><pre class="hljs" style="display: block; overflow-x: auto; background: rgb(247, 243, 247); color: rgb(105, 93, 105); padding: 0.5em;"><span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">begin</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[&gt;=latex]</span></span>
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[draw,diamond,aspect=2.5]</span></span> (if) at (0,0) {Условие};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[draw,rectangle,inner sep=5pt]</span></span> (yes) at (2,-1)
+{Действие 1};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">node</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[draw,rectangle,inner sep=5pt]</span></span> (no) at (-2,-1)
+{Действие 2};
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;]</span></span> (if) -| (yes);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">draw</span><span class="hljs-string" style="color: rgb(145, 139, 59);">[-&gt;]</span></span> (if) -| (no);
+<span class="hljs-tag" style="color: rgb(202, 64, 43);">\<span class="hljs-name" style="color: rgb(202, 64, 43);">end</span><span class="hljs-string" style="color: rgb(145, 139, 59);">{tikzpicture}</span></span>
+</pre></th>
+                <th style="width: 50%;"><IMG src="/static/image/tikz_images/58.png" style="width: 100%;"></th>
+            </tr>
+        </table>
+        <p>
+            Некоторые (свободные) графические программы позволяют автоматически генерировать latex-код созданного изображения:
+            <a href="https://www.geogebra.org/">GeoGebra, </a><a href="http://asymptote.sourceforge.net/">Asymptote, </a>и другие.
+        </p>
+        <div>
+            <p><span style="color:#95a5a6"><span style="font-size:12px"><span style="font-family:Courier New,Courier,monospace"><em>#Дата редактирования 26/10/2022</em></span></span></span></p>
+        </div>
     </div>
 </div>
 {% endblock %}
