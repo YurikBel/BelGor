@@ -162,4 +162,7 @@ color:var(--color);
         left: 0px;
         padding: 10px;
     }
+    .backgroundleft{
+        display:none
+    }
 }

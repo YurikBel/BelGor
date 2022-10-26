@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block title %} Лабораторные {% endblock %}
-{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/labs.css' %}">{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{% static 'style/graph.css' %}">{% endblock %}
 {% block content %}
 <div>
     <h4>Создание графиков</h4>
@@ -9,6 +9,7 @@
         <i>В настоящее время ведется написание скрипта для браузерного создания графиков и математической их обработки. Обещаем,
         что разработка пойдет быстрее как только админы сдадут (или не сдадут) коллоквиум.</i>
     </p>
+    <!-- <div id="chartdiv"></div> -->
     <!-- <textarea id="input" style="width: 500px; height: 300px;">
         50  10  0.265  0.5
         40  8.5  0.23  0.5
@@ -29,4 +30,7 @@
 {% block js %}
 <script src="/static/javaScript/graph.js">
 </script>
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 {% endblock %}
