@@ -1,1 +1,2 @@
 print('Olek')
+print('mi')
